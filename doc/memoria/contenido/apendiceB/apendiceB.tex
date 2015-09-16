@@ -1,0 +1,285 @@
+%\appendix
+%\clearpage % o \cleardoublepage
+%\addappheadtotoc
+%\appendixpage
+
+\chapter{Desarrollo de nuevos juegos, estrategias y heurísticos}
+\label{cap:desarrollo_juegos_estrategias_heuristicos}
+Este apéndice contiene información sobre cómo extender la aplicación, incorporando nuevos juegos, estrategias y heurísticos.
+%En el capítulo~\ref{cap:diseno} se presentó la arquitectura de la aplicación junto con los diagramas de clases tanto del módulo de razonamiento como de la propia aplicación gráfica.
+Se explica detalladamente como agregar nuevos elementos tanto al módulo de razonamiento como a la interfaz gráfica a partir del diseño propuesto en el capítulo~\ref{cap:diseno}.
+
+\bigskip
+Para llevar a cabo todas las extensiones que se proponen a continuación es necesario disponer del código fuente del proyecto.
+Todo el código se encuentra en lenguaje Java (versión 1.6) y las únicas bibliotecas de clases externas que son necesarias son las pertenecientes a la implementación de las redes neuronales (\textit{Encog Machine Learning Framework}); estas se incluyen también en el directorio \texttt{lib} dentro del proyecto.
+En \citeref{encog} puede obtenerse información sobre dicha biblioteca de clases.
+
+\section{Desarrollo de juegos}
+\label{sec:desarrollo_juegos}
+Comenzaremos mostrando como agregar nuevos juegos.
+Recordemos que los juegos deberán ser bipersonales, por turnos, de suma cero, de información perfecta y deterministas.
+
+Se detallará primero cómo agregar un nuevo juego al módulo de razonamiento y posteriormente a la aplicación gráfica.
+
+\subsection{Extensión del módulo de juegos}
+\label{ssec:extension_modulo_juegos}
+Teniendo en cuenta el diagrama de clases de la figura~\ref{fig:diagramaclases_juegos} presentado en el capítulo~\ref{cap:diseno}, 
+toda clase que represente los estados de un juego debe implementar la interfaz \texttt{\textit{EstadoJuego}}; lo que significa que debemos representar los estados de nuestro juego con los siguientes métodos:
+
+\bigskip
+\begin{description}
+	\item \texttt{hijos} \\
+	Devuelve una lista con los estados sucesores, es decir, los estados directamente accesibles desde el actual.
+	\item \texttt{ganador} \\
+	Devuelve la ficha del jugador que ha ganado o \textit{null} si nadie ganó.
+	\item \texttt{agotado} \\
+	Verdadero si el estado es final y hay empate, falso en otro caso.
+	\item \texttt{jug1?} \\
+	Verdadero si es el turno del primer jugador, falso en otro caso.
+	\item \texttt{clave} \\	
+	Clave para indexar el estado en formato cadena de texto.
+	\item \texttt{toString} \\
+	Descripción del estado, como por ejemplo la situación del tablero, turno del jugador, etc.
+\end{description}
+
+Para ayudar a implementar esta clase se pueden utilizar las utilidades disponibles en el paquete \texttt{Util}.
+Aunque no es obligatorio su uso, si es recomendable pues proporciona una implementación básica de las fichas, un tablero genérico o una posible representación de los movimientos.
+
+Con esto ya tenemos un nuevo juego en el módulo al que poder aplicarle las estrategias disponibles.
+Sin embargo, también necesitamos desarrollar un jugador humano que pida los movimientos mediante un dispositivo de entrada. 
+Aunque este jugador no es obligatorio para el módulo de razonamiento, si lo será para el entorno gráfico, por lo que se explica en este apartado.
+
+\subsubsection{Jugador humano}
+\label{sssec:desarrollo_jugador_humano}
+Para crear un jugador humano podemos extender la clase abstracta \texttt{\textit{JugadorHumano}} del paquete \texttt{Estrategias} o simplemente implementar la interfaz \texttt{\textit{Jugador}} del mismo paquete. En este último caso sólo hay un método que desarrollar:
+
+\begin{description}
+	\item \texttt{mueve} \\
+	Dado el estado actual devuelve el estado resultante de mover en la posición indicada.
+\end{description}
+
+El dispositivo de entrada para los movimientos de los juegos en el módulo de razonamiento será normalmente el teclado, aunque para la interfaz gráfica lo normal será usar el ratón y el movimiento será proporcionado por el controlador de la propia interfaz del juego.
+
+\bigskip
+A continuación, para añadir el juego al entorno gráfico hay que desarrollar la interfaz gráfica del juego.
+
+\subsection{Extensión de la aplicación para juegos}
+\label{ssec:extension_aplicacion_juegos}
+Para incorporar el juego a la aplicación hay que proporcionar un panel para configurar las opciones del juego (si fuera necesario), un panel de juego (tablero) y un controlador para guiar el desarrollo de la partida.
+
+El paquete \texttt{Extensión Juego} del diagrama presentado en la figura~\ref{fig:diagramaclases_gui} muestra estos aspectos.
+Se debe implementar la interfaz \texttt{\textit{Juego}} de dicho paquete que consta de los métodos:
+\begin{description}
+	\item \texttt{nombre} \\
+	Nombre del juego.
+	\item \texttt{estadoJuego} \\
+	Devuelve el estado inicial del juego con la configuración por defecto.
+	\item \texttt{información} \\
+	Dado un estado proporciona información básica sobre el mismo como por ejemplo el tamaño del tablero. Esta información se mostrará en la ventana principal de la aplicación cuando se seleccione el juego.
+	\item \texttt{informaciónDetalle} \\
+	Dado un estado proporciona información detallada sobre el mismo (último movimiento, puntuación,\ldots). Esta información aparecerá en la ventana de estadísticas al final de la partida.
+	\item \texttt{estrategiaHumana} \\
+	Jugador humano para este juego.
+	\item \texttt{panelOpciones} \\
+	Proporciona un panel (\texttt{\textit{PanelOpcionesJuego}}) para configurar las opciones del juego; si no es necesario configurar nada devolverá \textit{null}.
+	\item \texttt{panelJuego} \\
+	Proporciona un panel a modo de tablero gráfico donde se desarrollará la partida (clase \texttt{\textit{PanelJuego}}). Incluye una representación gráfica de los elementos que intervengan en la partida, por ejemplo las fichas.
+	\item \texttt{controladorJuego} \\
+	Proporciona el controlador del juego (clase \texttt{\textit{ControladorJuego}}) que interactúa directamente con el panel de juego y controla el desarrollo de la partida.
+\end{description}
+
+El paquete contiene las tres clases abstractas que se deberán especializar y que son las que devuelven los tres últimos métodos presentados anteriormente.
+Estas clases son:
+\begin{itemize}
+	\item \texttt{PanelOpcionesJuego} \\
+	que define los métodos:
+	\begin{description}
+		\item \texttt{estadoJuego}\\
+		Devuelve un estado inicial del juego configurado con las opciones elegidas en el panel.
+		\item \texttt{registrarControlador} \\
+		Registra un controlador para el panel (opcional).
+	\end{description}
+
+	\item \texttt{PanelJuego}\\
+	con los métodos:
+	\begin{description}
+	\item \texttt{panelJuegoEstado}\\
+	Dado un estado del juego devuelve la representación del mismo de manera gráfica a través de un panel.
+	\item \texttt{registrarControlador}\\
+	Registra el controlador de juego en los componentes interactivos del panel.
+	\end{description}
+	\item \texttt{ControladorJuego}\\
+	cuyos principales métodos son:
+	\begin{description}
+	\item \texttt{jugar} \\
+	Este el único método abstracto de esta clase y es llamado al iniciar una partida. Se encarga de controlar el desarrollo de la misma.
+	\item \texttt{finJuego} \\
+	Es el método que se deberá llamar al terminar la partida, indicando el valor de utilidad y un mensaje informativo.
+	\end{description}
+\end{itemize}
+
+Una vez completado el desarrollo completo del juego se deberá indicar en un fichero de configuración representado mediante la clase \texttt{Juegos}, agregando una nueva línea con un identificador y una instancia de la clase que implementa la interfaz \texttt{\textit{Juego}}.
+
+\bigskip
+La siguiente sección describe la forma de incorporar nuevas estrategias, incluyendo una estrategia humana para los juegos.
+
+\section{Desarrollo de estrategias}
+\label{sec:desarrollo_estrategias}
+A continuación se muestra la incorporación de nuevas estrategias al sistema.
+Al igual que con los juegos, primero extenderemos el módulo de estrategias y después la aplicación gráfica.
+
+\subsection{Extensión del módulo de estrategias}
+\label{ssec:extension_modulo_estrategias}
+Toda clase que represente un agente jugador debe implementar la interfaz \texttt{\textit{Jugador}} del paquete \texttt{Estrategias} (figura~\ref{fig:diagramaclases_estrategias}).
+El método ha desarrollar es el mismo que para la estrategia humana presentada en~\ref{ssec:extension_modulo_juegos}:
+
+\begin{description}
+	\item \texttt{mueve} \\
+	Devuelve el estado resultante de que el jugador mueva en el estado actual.
+\end{description}
+
+Para los jugadores que necesiten de un heurístico puede extenderse la clase \texttt{JugadorEvaluar} cuyo constructor recibe el evaluador heurístico a usar y dispone de un método ya implementado para evaluar los estados:
+
+\begin{description}
+	\item \texttt{evalua} \\
+	Dado un estado y las fichas de los jugadores devuelve infinito si el estado es final y ganador para \textit{MAX}, infinito negativo si es final y perdedor para \textit{MAX} y el valor de la función heurística proporcionada por el evaluador en otro caso.
+\end{description}
+
+\bigskip
+Para obtener información detallada sobre el rendimiento de la estrategia, la estrategia deberá proporcionar sus propias estadísticas.
+
+\subsubsection{Estadísticas}
+\label{ssec:estadisticas}
+La estrategia debe proporcionar estadísticas básicas de su uso para poder compararlas con las demás.
+Para ello deberá implementar la interfaz \texttt{\textit{Estadísticas}}:
+\begin{description}
+	\item \texttt{numTotalMovimiento}\\
+	Número total de movimientos realizados por el jugador. Este número es independiente del número de partidas jugadas por el jugador. Es el número de veces que se ha llamado al método mueve.
+	\item \texttt{tiempoMedioPorMovimiento}\\
+	Tiempo medio por movimiento en milisegundos.\footnote{A pesar de que el número de movimientos y el tiempo medio por movimiento pueda obtenerse de forma independiente a la estrategia; se exigen estos datos porque la propia estrategia puede calcular estos valores de forma más precisa.}
+	\item \texttt{getEstadisticas} \\
+	Proporciona estadísticas propias de la estrategia en formato texto.
+	\item \texttt{inicializarEstadísticas}\\
+	Inicializa las estadísticas del jugador.
+\end{description}
+
+
+\subsection{Extensión de la aplicación para estrategias}
+\label{ssec:extension_aplicacion_estrategias}
+Incorporar la nueva estrategia desarrollada a la aplicación gráfica es más fácil que incorporar un nuevo juego, pues sólo se necesita proporcionar un panel para configurar la estrategia en caso de que necesite configuración.
+
+El paquete \texttt{Extensión Estrategia} (figura~\ref{fig:diagramaclases_gui}) contiene la interfaz \texttt{\textit{Estrategia}} que se debe implementar.
+Los métodos son:
+\begin{description}
+	\item \texttt{nombre} \\
+	Nombre de la estrategia.
+	\item \texttt{información} \\
+	Proporciona una descripción de la estrategia que se mostrará al seleccionarla en la aplicación.
+	\item \texttt{estrategia} \\
+	Devuelve la estrategia (instancia de \texttt{\textit{Jugador}}) configurada con las opciones por defecto. Se proporciona el estado del juego seleccionado para el caso en el que la estrategia use un evaluador que necesite información del juego para su configuración.
+	\item \texttt{panelConfiguración} \\
+	Proporciona el panel de configuración de la estrategia, es decir, una instancia de la clase \texttt{\textit{PanelConfiguraciónEstrategia}} o \textit{null} si la estrategia no necesita ser configurada.
+\end{description}
+
+El panel de configuración extenderá la clase \texttt{\textit{PanelConfiguraciónEstrategia}} que contiene el método:
+
+\begin{description}
+	\item \texttt{estrategia} \\
+	Devuelve la estrategia configurada con las opciones indicadas en el panel.
+\end{description}
+
+En el caso de necesitar un heurístico para la estrategia se puede utilizar a su vez el panel de selección del evaluador heurístico (clase \texttt{PanelSelecciónEvaluador}) que se incluye en módulo de la interfaz y que permite seleccionar un evaluador de entre los disponibles en la aplicación. Este panel filtra los heurísticos por el juego seleccionado.
+
+\bigskip
+Por último, al igual que ocurría en el caso de los juegos, es necesario especificar la nueva estrategia en un fichero de configuración, representado esta vez mediante la clase \texttt{Estrategias}.
+Se debe agregar una nueva línea con un identificador para la estrategia y una instancia de la clase que implementa la interfaz \texttt{\textit{Estrategia}}.
+
+\bigskip
+La última sección muestra cómo incorporar nuevos heurísticos.
+
+\section{Desarrollo de heurísticos}
+\label{sec:desarrollo_heuristicos}
+El desarrollo de un evaluador heurístico puede realizarse de manera independiente al juego, es decir, sin usar información del estado del juego; aunque en la mayoría de los casos el heurístico necesitará de esa información.
+La forma de incorporar un nuevo heurístico al módulo de evaluadores es independiente de este aspecto.
+
+\subsection{Extensión del módulo de evaluadores heurísticos}
+\label{ssec:extension_modulo_heuristicos}
+Para definir un objeto evaluador heurístico se debe implementar la interfaz \texttt{\textit{Evaluador}} del paquete \texttt{Heurísticos} (figura~\ref{fig:diagramaclases_heuristicos}).
+Esta interfaz contiene únicamente un método:
+\begin{description}
+	\item \texttt{evaluación}\\
+	Dado un estado y las fichas \texttt{fichaMAX} y \texttt{fichaMIN} de los jugadores, devuelve la evaluación del estado suponiendo que \textit{MAX} juega con \texttt{fichaMAX} y \textit{MIN} con \texttt{fichaMIN}.
+	La evaluación será un valor positivo cuando el estado sea favorable para \textit{MAX}, negativo cuando sea desfavorable y cero cuando sea indiferente.
+\end{description}
+
+\subsubsection{Evaluadores entrenables}
+\label{sssec:evaluadores_entrenables}
+Si queremos que el evaluador pueda ser entrenado mediante aprendizaje con refuerzo debemos implementar además la interfaz \texttt{\textit{DiferenciasTemporalesDT}} disponible en el mismo paquete \texttt{Heurísticos}.
+La interfaz consta de los siguientes métodos:
+\begin{description}
+	\item \texttt{estadoGanador}\\
+	Enseña al evaluador que el estado dado es un estado ganador.
+	\item \texttt{estadoPerdedor}\\
+	Enseña al evaluador que el estado dado es un estado perdedor.
+	\item \texttt{estadoEmpate}\\
+	Enseña al evaluador que el estado dado es un estado final de empate.
+	\item \texttt{actualizaDT} \\
+	Dado los estados \texttt{e} y \texttt{e2}, entrena al evaluador empleando diferencias temporales y siendo \texttt{e2} sucesor de \texttt{e}.
+\end{description}
+
+\bigskip
+Para desarrollar un evaluador con red neuronal para un juego concreto, solamente debemos extender la clase \texttt{\textit{EvaluadorRedNeuronal}} e implementar el método codifica:
+\begin{description}
+	\item \texttt{codifica} \\
+	Dado un estado, devuelve la codificación del mismo empleando el número de neuronas de entrada que se necesiten.
+\end{description}
+
+\subsection{Extensión de la aplicación para heurísticos}
+\label{ssec:extension_aplicacion_heuristicos}
+Una vez desarrollado el evaluador heurístico, hay que integrarlo a la aplicación gráfica para que pueda ser seleccionado por alguna de las estrategias que usen heurísticos.
+
+El paquete \texttt{Extensión Evaluador} (figura~\ref{fig:diagramaclases_gui}) contiene la interfaz \texttt{\textit{Heurístico}} que se debe implementar.
+Los métodos son:
+\begin{description}
+\item \texttt{nombre} \\
+	Nombre del evaluador heurístico.
+	\item \texttt{información} \\
+	Proporciona una descripción del evaluador. Esta información se mostrará al seleccionarlo en la aplicación.
+	\item \texttt{entrenable} \\
+	Indica si el evaluador es entrenable o no.
+	\item \texttt{claseEstadoJuego} \\
+	Indica la subclase de \texttt{\textit{EstadoJuego}} de la que depende el evaluador heurístico. Si el evaluador es independiente del tipo de juego debe devolver \textit{null}.	
+	\item \texttt{evaluador} \\
+	Devuelve una instancia del evaluador con los parámetros por defecto. Se proporciona el estado del juego para el caso en el que el evaluador necesite información del juego.
+	\item \texttt{panelConfiguración} \\
+	Proporciona el panel de configuración del evaluador heurístico, es decir, una instancia de la clase \texttt{\textit{PanelConfiguraciónEvaluador}} o \textit{null} si el evaluador no necesita ser configurado.
+\end{description}
+
+La clase abstracta \texttt{\textit{PanelConfiguraciónEvaluador}} deberá extenderse si se desea proporcionar un panel de configuración para el evaluador; sus métodos son:
+\begin{description}
+	\item \texttt{evaluador} \\
+	Devuelve una instancia del evaluador configurado con los parámetros indicados en el panel.
+	\item \texttt{registrarControlador} \\
+	Registra un controlador para el panel (opcional).
+\end{description}
+
+\bigskip
+También hay que especificar el nuevo heurístico en un fichero de configuración (al igual que ocurre con los juegos y las estrategias); en este caso el fichero de configuración es representado por la clase \texttt{Heurísticos}.
+Se debe agregar una nueva línea con un identificador para el evaluador y una instancia de la clase que implementa la interfaz \texttt{\textit{Heurístico}}.
+
+\bigskip
+Todos los paneles presentados en las secciones anteriores para cada elemento (juegos, estrategias y heurísticos) pueden proporcionar información de ayuda al usuario mediante el sistema de ayuda del entorno interactivo.
+
+\section{Sistema de ayuda}
+\label{sec:sistema_ayuda}
+Para proporcionar información de ayuda al usuario todos las ventanas y paneles de la aplicación implementan la interfaz \texttt{\textit{InformaciónAyuda}} (figura~\ref{fig:diagramaclases_gui}):
+\begin{description}
+	\item \texttt{infoComponente} \\
+	Devuelve la información de ayuda perteneciente al componente indicado.
+	\item \texttt{actualizarInfo} \\
+	Actualiza la información del componente activo en este momento. Sólo es necesario si la ventana se encarga de mostrar la información ella misma.
+	\item \texttt{registrarControladorInformacion} \\
+	Registra en cada componente que desee proporcionar información un controlador específico para el sistema de presentación de la ayuda.
+\end{description}
+
+La información de ayuda siempre se muestra en la ventana activa en cada momento, por lo que los paneles internos sólo deben proporcionar la información.

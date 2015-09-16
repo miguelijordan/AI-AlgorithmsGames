@@ -1,0 +1,89 @@
+\chapter{Juegos}
+\label{cap:juegos}
+En este capítulo se explican los diferentes tipos de juegos en función de las características que los hacen interesantes para la IA.
+Nos centraremos en una clase especializada: juegos con búsqueda con adversarios.
+Concretamente se estudian dos: el juego del Conecta-4 y el juego del Go.
+
+\bigskip
+Los juegos proporcionan una tarea estructurada en la que es muy fácil medir el éxito o el fracaso. 
+En comparación con otras aplicaciones de IA, los juegos no necesitan grandes cantidades de conocimiento.
+
+Los juegos son conocidos en IA como \textbf{problemas de búsqueda con adversarios} porque se trata de entornos competitivos en los cuales los objetivos de los agentes\footnote{En el capítulo~\ref{cap:estrategias} se definirá formalmente el término agente, pero por ahora podemos considerar un agente como un jugador de juegos.
+} están en conflicto.
+Estos problemas se resuelven mediante los denominados ``algoritmos de juegos'', los cuales se estudiarán en el capítulo~\ref{cap:estrategias}.
+
+\section{Características de los juegos}
+\label{sec:caracteristicas_juegos}
+Este proyecto está orientado a una clase de juegos especializada: juegos de suma cero, de dos jugadores, por turnos, deterministas y de información perfecta.
+Los problemas de juegos en IA pueden clasificarse según estas propiedades:
+\begin{itemize}
+	\item \textbf{Número de jugadores} \\
+	Un juego puede ser para un jugador sin adversario (conocidos como puzzles o solitarios, por ejemplo el Puzzle-8 o el Cubo de Rubik), para dos jugadores (bipersonales) o para N jugadores.
+	\item \textbf{Suma cero} \\
+	Un juego de suma cero describe una situación con adversarios, en la que los valores de utilidad al final del juego, son siempre iguales y opuestos. Esto quiere decir que la ganancia o pérdida de un agente se equilibra con exactitud con las pérdidas o ganancias de los otros agentes.
+Por ejemplo, si un jugador gana una partida de Ajedrez (+1), el otro jugador necesariamente pierde (-1).
+	\item \textbf{Orden de los movimientos} \\
+Los agentes pueden realizar sus acciones alternativamente (por turnos), al azar o incluso realizar cada agente un número determinado de acciones seguidas.
+	\item \textbf{Información perfecta} \\
+	En un juego con información perfecta no interviene el azar y los estados del juego son totalmente observables, es decir, los agentes tienen un conocimiento perfecto del estado actual del juego en cada momento y es el mismo para todos los agentes.
+Por el contrario, en un juego con información imperfecta puede intervenir el azar y puede haber ocultación de información entre los agentes.
+	\item \textbf{Determinismo} \\
+	Un juego es determinista si no aparece el azar en algunas de las propiedades anteriores.
+En caso contrario el juego es indeterminista o estocástico.
+\end{itemize}
+Teniendo esto en cuenta, los juegos a considerar son aquellos que presenten entornos deterministas, totalmente observables en los cuales hay dos agentes cuyas acciones deben alternar y en los que los valores de utilidad al final son iguales y opuestos.
+Ejemplos de juegos que cumplen estas propiedades son: el ajedrez, las damas, el 3 en Raya, el Othello o Reversi y por supuesto los dos juegos que se proponen en este proyecto: el Conecta-4 y el Go.
+En IA, a este tipo de juegos se les conoce como \textit{classic board-games} en la literatura anglosajona.
+
+\section{Juegos como problemas de búsqueda con adversarios}
+\label{sec:juegos_problemas_busqueda_adversario}
+Un juego puede definirse formalmente como una clase de problemas de búsqueda con los siguientes elementos:
+\begin{itemize}
+	\item Un \textbf{estado inicial}, que incluye la situación inicial de la partida (por ejemplo la posición inicial del tablero) e identifica al jugador que mueve.
+	\item Una \textbf{función sucesor}, que devuelve una lista de pares (movimiento, estado), indicando un movimiento legal y el estado resultante.
+	\item Un \textbf{test terminal} que determina cuándo se termina el juego.
+	A los estados donde el juego se ha terminado se les llaman estados terminales.
+	\item Una \textbf{función de utilidad} (también llamada función objetivo o función de rentabilidad), que da un valor numérico a los estados terminales. Por ejemplo, +1, -1 ó 0 cuando el resultado de un juego es un triunfo, una pérdida o un empate respectivamente.
+\end{itemize}
+Estos elementos permiten construir un \textbf{espacio de estados} donde puedan actuar los algoritmos de búsqueda.
+Los algoritmos interpretan el espacio de estados de los juegos como un  \textbf{árbol de juegos} o \textbf{árbol de búsqueda}.
+Estos conceptos se definirán en detalle en el capítulo~\ref{cap:estrategias}.
+
+El tamaño del espacio de estados permite clasificar los juegos por su complejidad.
+La tabla~\ref{tab:complejidad_juegos} presenta varios juegos clásicos; para cada uno de ellos se muestra la complejidad del árbol de búsqueda en función del número de nodos que contiene y se muestra la clase de complejidad\footnote{\textit{PSPACE} es la clase de problemas resolubles en espacio polinómico. \textit{EXPTIME} es la clase de problemas resolubles en tiempo exponencial. Un problema \textit{P} es \textit{C-completo} (donde \textit{C} es la clase de complejidad del problema \textit{P}) si cualquier otro problema de la clase \textit{C} es reducible a \textit{P}.} a la que pertenece \citeref{complejidadJuegos}.
+\begin{table}[!h]
+\caption{Complejidad de los juegos clásicos de tablero.}
+\label{tab:complejidad_juegos}	% La etiqueta debe ir justo despues de caption o dentro de él.
+\begin{center}
+\begin{tabular}{lcl}
+\hline
+\textbf{Juego} & \textbf{Tamaño del árbol de juegos} & \textbf{Clase de complejidad}\\
+%\hline
+3 en raya & $10^{5}$ & PSPACE-completo\\
+Conecta-4 & $10^{21}$ & PSPACE\\ 
+Damas & $10^{31}$ & EXPTIME-completo\\
+Othello o Reversi & $10^{58}$ & PSPACE-completo\\ 
+Ajedrez & $10^{123}$ & EXPTIME-completo\\ 
+Go (19x19) & $10^{360}$ & EXPTIME-completo\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+% PONER EN LA INTRODUCCION
+%Los juegos son un tema atractivo a estudiar para los investigadores de
+%Inteligencia Artificial (IA). La naturaleza abstracta de los juegos, la facilidad
+%de representar el estado de los mismos y la definición precisa de sus reglas
+%hace que hayan tenido mucho interés en la comunidad de IA.
+
+\bigskip
+A continuación se presentan los juegos desarrollados en el proyecto: el Conecta-4 y el Go.
+
+\input{contenido/cap2/conecta4.tex}
+
+\input{contenido/cap2/go.tex}
+
+
+
+
+
+

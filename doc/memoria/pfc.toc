@@ -1,0 +1,113 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{9}{section.1.1}
+\contentsline {section}{\numberline {1.2}Estado del arte}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivos}{10}{section.1.3}
+\contentsline {section}{\numberline {1.4}Aportaciones}{11}{section.1.4}
+\contentsline {section}{\numberline {1.5}Estructura de los contenidos}{12}{section.1.5}
+\contentsline {chapter}{\numberline {2}Juegos}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Caracter\IeC {\'\i }sticas de los juegos}{13}{section.2.1}
+\contentsline {section}{\numberline {2.2}Juegos como problemas de b\IeC {\'u}squeda con adversarios}{14}{section.2.2}
+\contentsline {section}{\numberline {2.3}El juego del Conecta-4}{15}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Reglas del juego}{15}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}El juego del Go}{16}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Reglas del juego}{16}{subsection.2.4.1}
+\contentsline {subsubsection}{Puntuaci\IeC {\'o}n}{17}{section*.7}
+\contentsline {subsubsection}{\textit {Handicap}}{18}{section*.8}
+\contentsline {chapter}{\numberline {3}Estrategias}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Agentes}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}El medio}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Agentes para juegos}{20}{section.3.3}
+\contentsline {section}{\numberline {3.4}B\IeC {\'u}squeda de una estrategia ganadora}{21}{section.3.4}
+\contentsline {section}{\numberline {3.5}Estrategias}{22}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Aleatoria}{22}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Evaluador heur\IeC {\'\i }stico}{23}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Minimax}{23}{subsection.3.5.3}
+\contentsline {subsubsection}{Negamax}{25}{section*.11}
+\contentsline {subsubsection}{Minimax con profundidad m\IeC {\'a}xima de b\IeC {\'u}squeda}{25}{section*.12}
+\contentsline {subsubsection}{Minimax con l\IeC {\'\i }mite de tiempo}{26}{section*.13}
+\contentsline {subsection}{\numberline {3.5.4}Poda alfa-beta}{26}{subsection.3.5.4}
+\contentsline {subsubsection}{Alfa-beta con profundidad m\IeC {\'a}xima de b\IeC {\'u}squeda}{28}{section*.15}
+\contentsline {subsubsection}{Alfa-beta con l\IeC {\'\i }mite de tiempo}{28}{section*.16}
+\contentsline {subsection}{\numberline {3.5.5}Tablas de transposici\IeC {\'o}n}{29}{subsection.3.5.5}
+\contentsline {subsubsection}{Minimax con profundidad m\IeC {\'a}xima de b\IeC {\'u}squeda y tabla de transposici\IeC {\'o}n}{29}{section*.17}
+\contentsline {subsubsection}{Minimax con l\IeC {\'\i }mite de tiempo y tabla de transposici\IeC {\'o}n}{30}{section*.18}
+\contentsline {subsubsection}{Alfa-beta con profundidad m\IeC {\'a}xima de b\IeC {\'u}squeda y tabla de transposici\IeC {\'o}n}{30}{section*.19}
+\contentsline {subsubsection}{Alfa-Beta con l\IeC {\'\i }mite de tiempo y tabla de transposici\IeC {\'o}n}{30}{section*.20}
+\contentsline {subsection}{\numberline {3.5.6}Monte-Carlo}{30}{subsection.3.5.6}
+\contentsline {subsubsection}{Monte-Carlo con n\IeC {\'u}mero de simulaciones fijas}{31}{section*.21}
+\contentsline {subsubsection}{Monte-Carlo con l\IeC {\'\i }mite de tiempo}{31}{section*.22}
+\contentsline {subsection}{\numberline {3.5.7}Monte-Carlo Tree Search}{32}{subsection.3.5.7}
+\contentsline {subsubsection}{Extensiones de Monte-Carlo Tree Search}{37}{section*.25}
+\contentsline {subsubsection}{Monte-Carlo Tree Search con n\IeC {\'u}mero de simulaciones fijas}{37}{section*.26}
+\contentsline {subsubsection}{Monte-Carlo Tree Search con l\IeC {\'\i }mite de tiempo}{38}{section*.27}
+\contentsline {chapter}{\numberline {4}Heur\IeC {\'\i }sticos}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Funci\IeC {\'o}n de evaluaci\IeC {\'o}n heur\IeC {\'\i }stica}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Aprendizaje con refuerzo}{40}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}M\IeC {\'e}todo de las diferencias temporales}{41}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Tabla de Valor}{42}{section.4.3}
+\contentsline {section}{\numberline {4.4}Red Neuronal}{42}{section.4.4}
+\contentsline {section}{\numberline {4.5}Heur\IeC {\'\i }sticos para el Conecta-4}{43}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Matriz de posibilidades}{43}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Red neuronal para el Conecta-4}{45}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Heur\IeC {\'\i }sticos para el Go}{45}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Evaluador de territorios}{46}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Evaluador de puntos JP}{46}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Evaluador de puntos CH}{46}{subsection.4.6.3}
+\contentsline {subsection}{\numberline {4.6.4}Red neuronal para el Go}{46}{subsection.4.6.4}
+\contentsline {chapter}{\numberline {5}Especificaci\IeC {\'o}n}{48}{chapter.5}
+\contentsline {section}{\numberline {5.1}Requisitos}{48}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}M\IeC {\'o}dulo de razonamiento}{48}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Aplicaci\IeC {\'o}n interactiva}{51}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Casos de uso}{51}{section.5.2}
+\contentsline {chapter}{\numberline {6}Arquitectura de la aplicaci\IeC {\'o}n}{54}{chapter.6}
+\contentsline {section}{\numberline {6.1}M\IeC {\'o}dulo de razonamiento}{54}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Juegos}{54}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Estrategias}{56}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Heur\IeC {\'\i }sticos}{58}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Marco de trabajo}{58}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Aplicaci\IeC {\'o}n interactiva}{60}{section.6.2}
+\contentsline {chapter}{\numberline {7}Experimentaci\IeC {\'o}n}{62}{chapter.7}
+\contentsline {section}{\numberline {7.1}Comparativa de evaluadores heur\IeC {\'\i }sticos}{62}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Evaluadores del Conecta-4}{62}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Evaluadores del Go}{64}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Entrenamientos}{65}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Comparativa de estrategias}{66}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Minimax y Alfa-Beta}{67}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Monte-Carlo y Monte-Carlo Tree Search}{70}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Comparativa de estrategias en el Go}{72}{subsection.7.2.3}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{74}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusiones}{74}{section.8.1}
+\contentsline {section}{\numberline {8.2}Trabajo futuro}{75}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Extensiones del proyecto}{75}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Aplicaci\IeC {\'o}n a otras \IeC {\'a}reas}{76}{subsection.8.2.2}
+\contentsline {chapter}{Ap\IeC {\'e}ndices}{77}{section*.67}
+\contentsline {chapter}{\numberline {A}Manual de usuario}{78}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n}{78}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Requisitos m\IeC {\'\i }nimos}{78}{subsection.Alph1.1.1}
+\contentsline {section}{\numberline {A.2}Ejecuci\IeC {\'o}n}{78}{section.Alph1.2}
+\contentsline {section}{\numberline {A.3}Funcionamiento}{78}{section.Alph1.3}
+\contentsline {subsection}{\numberline {A.3.1}Selecci\IeC {\'o}n y configuraci\IeC {\'o}n del juego}{79}{subsection.Alph1.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Selecci\IeC {\'o}n y configuraci\IeC {\'o}n de los jugadores}{79}{subsection.Alph1.3.2}
+\contentsline {subsubsection}{Entrenamiento del jugador}{81}{section*.71}
+\contentsline {subsection}{\numberline {A.3.3}Modos de uso de la aplicaci\IeC {\'o}n}{81}{subsection.Alph1.3.3}
+\contentsline {subsubsection}{Jugar}{81}{section*.72}
+\contentsline {subsubsection}{Simular}{82}{section*.74}
+\contentsline {subsubsection}{Analizar estado}{83}{section*.76}
+\contentsline {subsection}{\numberline {A.3.4}Estad\IeC {\'\i }sticas}{83}{subsection.Alph1.3.4}
+\contentsline {chapter}{\numberline {B}Desarrollo de nuevos juegos, estrategias y heur\IeC {\'\i }sticos}{85}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Desarrollo de juegos}{85}{section.Alph2.1}
+\contentsline {subsection}{\numberline {B.1.1}Extensi\IeC {\'o}n del m\IeC {\'o}dulo de juegos}{85}{subsection.Alph2.1.1}
+\contentsline {subsubsection}{Jugador humano}{86}{section*.79}
+\contentsline {subsection}{\numberline {B.1.2}Extensi\IeC {\'o}n de la aplicaci\IeC {\'o}n para juegos}{87}{subsection.Alph2.1.2}
+\contentsline {section}{\numberline {B.2}Desarrollo de estrategias}{88}{section.Alph2.2}
+\contentsline {subsection}{\numberline {B.2.1}Extensi\IeC {\'o}n del m\IeC {\'o}dulo de estrategias}{88}{subsection.Alph2.2.1}
+\contentsline {subsubsection}{Estad\IeC {\'\i }sticas}{89}{section*.80}
+\contentsline {subsection}{\numberline {B.2.2}Extensi\IeC {\'o}n de la aplicaci\IeC {\'o}n para estrategias}{89}{subsection.Alph2.2.2}
+\contentsline {section}{\numberline {B.3}Desarrollo de heur\IeC {\'\i }sticos}{90}{section.Alph2.3}
+\contentsline {subsection}{\numberline {B.3.1}Extensi\IeC {\'o}n del m\IeC {\'o}dulo de evaluadores heur\IeC {\'\i }sticos}{91}{subsection.Alph2.3.1}
+\contentsline {subsubsection}{Evaluadores entrenables}{91}{section*.81}
+\contentsline {subsection}{\numberline {B.3.2}Extensi\IeC {\'o}n de la aplicaci\IeC {\'o}n para heur\IeC {\'\i }sticos}{91}{subsection.Alph2.3.2}
+\contentsline {section}{\numberline {B.4}Sistema de ayuda}{93}{section.Alph2.4}
+\contentsline {chapter}{Referencias}{94}{section.Alph2.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{96}{appendix*.82}

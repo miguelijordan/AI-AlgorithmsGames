@@ -1,0 +1,96 @@
+\documentclass[12pt, a4paper]{report}
+
+% Preámbulo
+
+% Incluye el fichero con la configuración de estilo (paquetes, idiomas, ...)
+\input{./estilo/estiloPFC.sty}
+
+% Para que aparezca las subsubsecciones numeradas:
+%\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+
+% Información
+\title{}
+\author{José Miguel Horcas Aguilera}
+\date{\today}
+
+
+\includeonly{contenido/pagina1/pagina1,
+ 			 contenido/pagina2/pagina2,
+ 			 contenido/cap1/introduccion,
+ 			 contenido/cap2/juegos,
+ 			 contenido/cap3/algoritmos,
+ 			 contenido/cap4/heuristicos,
+ 			 contenido/cap5/especificacion,
+ 			 contenido/cap6/arquitectura,
+ 			 contenido/cap7/experimentacion,
+ 			 contenido/cap8/conclusiones,
+ 			 contenido/apendiceA/manualUsuario,
+ 			 contenido/apendiceB/apendiceB}
+
+%\makeindex
+\begin{document}	% inicio documento
+	%\maketitle
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{Índice de tablas}
+
+\include{contenido/pagina1/pagina1}
+\include{contenido/pagina2/pagina2}
+
+	\tableofcontents
+	\listoffigures
+	\listoftables
+
+% 1. Introducción: Debe incluir la explicación de los objetivos del proyecto (Planteamiento del problema abordado, antecedentes, estado del problema antes del proyecto y aportación realizada) y la descripción de los contenidos de cada capítulo.
+\include{contenido/cap1/introduccion}
+
+% 2. Juegos
+\include{contenido/cap2/juegos}
+
+% 3. Algoritmos
+\include{contenido/cap3/algoritmos}
+
+% 4. Heurísticos
+\include{contenido/cap4/heuristicos}
+
+% 5. Especificación
+\include{contenido/cap5/especificacion}
+
+% 5. Arquitectura de la aplicación (diseño)
+\include{contenido/cap6/arquitectura}
+
+% 6. Experimentación
+\include{contenido/cap7/experimentacion}
+
+% 7. Conclusiones y trabajo futuro
+\include{contenido/cap8/conclusiones}
+
+% Apéndices
+% A. Manual de usuario
+\include{contenido/apendiceA/manualUsuario}
+
+% B. Desarrollo de nuevos juegos, estrategias y heurísticos.
+\include{contenido/apendiceB/apendiceB}
+
+%\selectbiblanguage{spanish}
+%\setbtxfallbacklanguage{spanish}
+%\bibsspanish
+
+% Referencias
+\nociteref{*}
+\bibliographystyleref{estilo/miEstilo}
+\addcontentsline{toc}{chapter}{Referencias}
+\bibliographyref{contenido/referencias/referencias}
+
+\pagebreak
+% Bibliografía
+\nocite{*}
+\renewcommand{\refname}{Bibliografía}
+%\bibliographystyle{unsrt}
+\bibliographystyle{estilo/miEstilo}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliography{contenido/bibliografia/bibliografia}
+
+
+\end{document}		% fin documento

@@ -1,0 +1,66 @@
+\chapter{Conclusiones y trabajo futuro}
+\label{cap:conclusiones}
+Este capítulo presenta las conclusiones obtenidas tras el desarrollo del proyecto.
+También describe el trabajo futuro relacionado con el proyecto como posibles extensiones o aplicaciones en otros campos de la IA.
+
+\section{Conclusiones}
+\label{sec:conclusiones}
+Se han alcanzado plenamente los objetivos del proyecto: desarrollar un entorno interactivo para estudiar las estrategias de IA en los juegos.
+La aplicación desarrollada permite ver en funcionamiento las estrategias de juegos, pudiendo jugar contra ellas y simplificando la tarea de analizarlas y compararlas.
+Se trata, por lo tanto, de una herramienta didáctica que puede resultar muy útil de cara a la docencia, tanto para los alumnos como para los profesores.
+
+La búsqueda de una estrategia óptima en juegos es un problema intratable en la mayoría de los casos, todos los algoritmos deben hacer algunas suposiciones y aproximaciones.
+Los algoritmos vistos son solamente algunas formas de aproximarse a la estrategia óptima.
+Cada estrategia tiene sus ventajas e inconvenientes, por ejemplo minimax garantiza una estrategia ganadora si pudiera aplicarse al árbol de juegos completo, pero como esto no es posible en la práctica, da lugar a varios inconvenientes como el \textit{efecto horizonte}\footnote{Efecto que ocurre cuando se evalúa como buena o mala una posición sin saber que en la siguiente jugada la situación se revierte.} cuando la condición de corte del algoritmo está basada sólo en una profundidad fija.
+
+Se han desarrollado y estudiado en detalle los algoritmos clásicos en sus versiones más básicas (minimax, alfa-beta y tablas de transposición), dejando de lado posibles mejoras más sofisticadas de estos como la búsqueda de la quietud (\textit{quiescence search}), los números de conspiración (\textit{conspiracy numbers}), la búsqueda con ventana cero (\textit{zero window search}) o las bases de datos de aperturas y de finales,\footnote{Puede obtenerse más información sobre estos conceptos en~\citeref{IAICJMHA}.} aunque el proyecto permite agregar estas estrategias de forma sencilla.
+
+También se han estudiado otros métodos más recientes como Monte-Carlo Tree Search, basado en el clásico método de Monte-Carlo.
+A su vez, se han visto una rama de la IA como es el aprendizaje en máquinas, aplicado a los agentes de juegos; permitiendo entrenar redes neuronales capaces de aprender a jugar al Conecta-4 y al Go.
+
+Como curiosidad mencionar una pequeña experiencia que tuve durante el proyecto en mi búsqueda de empleo: una empresa británica relacionada con las apuestas deportivas por Internet me propuso como ejercicio de evaluación el desarrollo del juego del 3 en raya junto con un jugador inteligente, usando el lenguaje Java.
+No había ninguna restricción en cuanto a la estrategia del jugador, pero la única condición que debía cumplir es que nunca perdiera frente a la estrategia propuesta por ellos.
+La estrategia Monte-Carlo en su versión básica con 1.000 simulaciones por movimiento fue suficiente para cumplir el objetivo.
+
+\section{Trabajo futuro}
+\label{sec:trabajo_futuro}
+Como trabajo futuro se presentan algunas extensiones y mejoras del proyecto realizado que pueden dar lugar a otros proyectos de investigación en el ámbito de la IA y la ingeniería del software.
+
+\subsection{Extensiones del proyecto}
+\label{ssec:extensiones_proyecto}
+A parte de la extensión natural del proyecto incorporando nuevos juegos, estrategias y heurísticos como se muestra en el apéndice~\ref{cap:desarrollo_juegos_estrategias_heuristicos}, el proyecto queda abierto a otro tipo de extensiones y mejoras de mayor envergadura.
+A continuación se exponen algunas de ellas ordenadas de mayor a menor relevancia:
+
+\begin{itemize}
+	\item Adaptación del módulo de razonamiento a otras clases de juegos: multijugador, de suma no cero, de información imperfecta e indeterministas.
+
+	Aunque el proyecto esta enfocado a los juegos clásicos de tablero, la extensión más natural del mismo es extender su aplicación a otros tipos de juegos con diferentes características.
+	
+	Esta extensión requiere rediseñar el módulo de razonamiento además de adaptar todas las estrategias a las nuevas características de los juegos; teniendo en cuenta que no todos los algoritmos vistos son generalizables para las nuevas características. 
+	Esta extensión puede considerarse un proyecto aparte debido a su alcance y complejidad.		
+	
+	\item Mejoras de los algoritmos con versiones concurrentes de los mismos.
+
+	Con la consolidación de la tecnología Grid y los procesadores paralelos se dispone de mayores recursos (cómputo y almacenamiento) para mejorar las decisiones de los algoritmos clásicos; además de desarrollar nuevos algoritmos basados en la programación distribuida.
+	
+	\item Modificación de la aplicación interactiva para incorporar nuevos juegos, estrategias y heurísticos en tiempo de ejecución.
+	
+	Esta modificación, aunque pueda parecer una mejora obvia y deseada en la aplicación, supone una tarea compleja de llevar a cabo, debido a que se debe dividir las diferentes partes del módulo de razonamiento de forma que puedan compilarse por separado y después conectarse a la aplicación.
+	Se trata de un desarrollo basado en componentes.	
+
+	Dentro de esta extensión también puede considerarse la posibilidad de que los nuevos componentes sean desarrollados con diferente tecnología o que sean independientes del lenguaje de programación.
+	% Esto supone cambiar el diseño arquitectónico del proyecto por un desarrollo basado en componentes.
+		
+\end{itemize}
+
+Personalmente la primera extensión es la más atractiva, pues expande el ámbito de los juegos con las nuevas características de los mismos, sobre todo con el auge actual de los juegos modernos de tablero (\textit{modern board-games} o \textit{Eurogames}); esto obliga a estudiar e investigar nuevas estrategias o modificar las existentes para ajustarse a dichas características.
+
+\subsection{Aplicación a otras áreas}
+\label{ssec:aplicacion_areas}
+Los juegos se han representado como problemas de búsqueda con adversarios y los algoritmos estudiados están enfocados a ese tipo de problemas.
+Sin embargo, estos algoritmos se pueden extender a otras áreas de la Inteligencia Artificial o de la Investigación Operativa como por ejemplo la generación de planes o los problemas de decisión.
+
+También ocurre el proceso inverso, es decir, que se adapten algoritmos de otras áreas al ámbito de los juegos, como es el caso del método de Monte-Carlo, usado en infinidad de campos (economía, finanzas \citeref{glasserman2004monte}, física médica, procesamiento de gráficos \citeref{GPUMonteCarlo} o incluso para calcular el número \textit{pi}). 
+En \citeref{george1996monte} puede encontrarse más aplicaciones del método de Monte-Carlo.
+
+En ambos casos, las continuas innovaciones en el ámbito de los juegos generan entusiasmo y resultan relevantes para las investigaciones en IA.

@@ -1,0 +1,71 @@
+% PAQUETES
+
+% Formato de los márgenes
+%\usepackage{anysize}								% Obsoleto.
+%\marginsize{2.5cm}{2.5cm}{2.5cm}{2.5cm}
+\usepackage[margin=2.5cm, nohead]{geometry}
+
+% Tipografía
+\usepackage{mathptmx}					% Tipo de letra 'Times'.
+
+% Codificación
+\usepackage[utf8x]{inputenc}			% Permite el uso de caracteres acentuados.
+\usepackage[T1]{fontenc}				% Letras acentuadas reales y no imitadas.
+\usepackage{textcomp}					% Incluye mayor número de letras con diacríticos.
+
+% Idiomas
+\usepackage[english, spanish]{babel} 	% Para generar documentos en idiomas distintos al inglés.
+%\usepackage{eurosym}					% Símbolo del euro (€).
+
+% Espaciado
+\usepackage[onehalfspacing]{setspace}	% Controla el espaciado entre líneas.
+										% \singlespacing, \onehalfspacing, \doublespacing
+% Gráficos e imágenes
+\usepackage{graphicx}
+\usepackage{subfig}					% Subfiguras: (a), (b),...
+
+% Directorios con las imágenes
+%\graphicspath{{contenido/cap3/imagenes}}
+
+% Extensiones de las imágenes
+%\DeclareGraphicsExtensions{eps}
+
+% Otros paquetes
+\usepackage{latexsym} 					% Símbolos extra.
+\usepackage{dsfont}						% Otros símbolos: \mathds{I}
+%\usepackage{marvosym}					% Otros símbolos: \Gemini
+
+% La mayoría de los símbolos matemáticos se incluyen gracias al paquete amsmath. Además, con los paquetes latexsymb y amssymb se completa la lista de todos los símbolos, operadores y delimitadores posibles. 
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Enlaces en el pdf. (Cuidado con usar imagenes .eps y este paquete, consultar documentación).
+\usepackage[dvipdfm]{hyperref}
+
+
+% Reutilizar contadores de enumerate.
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+% Apéndices
+\usepackage{appendix}
+
+% Bibliografía en español
+%\usepackage[spanish]{flexbib}
+%\usepackage[fixlanguage]{babelbib}	%[spanish,fixlanguage]
+%\usepackage{custom-bib}
+%\selectbiblanguage{spanish}
+
+% Para poner varias bibliografías y/o referencias
+\usepackage{multibib}
+\newcites{ref}{Referencias}
+
+% PARTICIÓN DE SÍLABAS
+%\hyphenation{sis-te-má-ti-co pa-leo-lí-ti-co}
+\hyphenation{VALOR MINIMAX}
+
+% Redefinición de nombres
+\renewcommand{\appendixname}{Apéndices}
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
+%\renewcommand{\tablename}{Tabla}

@@ -1,0 +1,389 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.20)  27 JAN 2012 12:33
+entering extended mode
+**pagina1.tex
+(H:\ProyectoFinCarrera\Memoria\contenido\pagina1\pagina1.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{center}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--1
+[] 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no Å in font cmbx10!
+
+Overfull \hbox (83.84676pt too wide) in paragraph at lines 4--5
+ \OT1/cmr/bx/n/10 UNIVERSIDAD 
+ []
+
+
+Overfull \hbox (16.37491pt too wide) in paragraph at lines 4--5
+ \OT1/cmr/bx/n/10 DE 
+ []
+
+
+Overfull \hbox (43.9442pt too wide) in paragraph at lines 4--5
+ \OT1/cmr/bx/n/10 MLAGA 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no â in font cmbx10!
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no ç in font cmbx10!
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no Å in font cmbx10!
+
+Overfull \hbox (54.26358pt too wide) in paragraph at lines 7--8
+ []\OT1/cmr/bx/n/10 ESCUELA 
+ []
+
+
+Overfull \hbox (20.13878pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 TC- 
+ []
+
+
+Overfull \hbox (30.36095pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 NICA 
+ []
+
+
+Overfull \hbox (19.06934pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 SU- 
+ []
+
+
+Overfull \hbox (19.2499pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 PE- 
+ []
+
+
+Overfull \hbox (30.24983pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 RIOR 
+ []
+
+
+Overfull \hbox (16.37491pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 DE 
+ []
+
+
+Overfull \hbox (17.19435pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 IN- 
+ []
+
+
+Overfull \hbox (20.43044pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 GE- 
+ []
+
+
+Overfull \hbox (38.2359pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 NIERA 
+ []
+
+
+Overfull \hbox (17.19435pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 IN- 
+ []
+
+
+Overfull \hbox (64.45798pt too wide) in paragraph at lines 7--8
+ \OT1/cmr/bx/n/10 FORMTICA 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no Å in font cmbx10!
+
+Overfull \hbox (67.81906pt too wide) in paragraph at lines 10--11
+ []\OT1/cmr/bx/n/10 INGENIERO 
+ []
+
+
+Overfull \hbox (16.55547pt too wide) in paragraph at lines 10--11
+ \OT1/cmr/bx/n/10 EN 
+ []
+
+
+Overfull \hbox (17.19435pt too wide) in paragraph at lines 10--11
+ \OT1/cmr/bx/n/10 IN- 
+ []
+
+
+Overfull \hbox (64.45798pt too wide) in paragraph at lines 10--11
+ \OT1/cmr/bx/n/10 FORMTICA 
+ []
+
+
+Overfull \hbox (59.45801pt too wide) in paragraph at lines 13--14
+ []\OT1/cmr/bx/n/10 ENTORNO 
+ []
+
+
+Overfull \hbox (17.19435pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 IN- 
+ []
+
+
+Overfull \hbox (28.01373pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 TER- 
+ []
+
+
+Overfull \hbox (20.51378pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 AC- 
+ []
+
+
+Overfull \hbox (29.37483pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 TIVO 
+ []
+
+
+Overfull \hbox (32.91649pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 PARA 
+ []
+
+
+Overfull \hbox (14.47214pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 EL 
+ []
+
+
+Overfull \hbox (17.77768pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 ES- 
+ []
+
+
+Overfull \hbox (20.68044pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 TU- 
+ []
+
+
+Overfull \hbox (21.81932pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 DIO 
+ []
+
+
+Overfull \hbox (16.37491pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 DE 
+ []
+
+
+Overfull \hbox (17.77768pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 ES- 
+ []
+
+
+Overfull \hbox (43.74976pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 TRATE- 
+ []
+
+
+Overfull \hbox (28.48595pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 GIAS 
+ []
+
+
+Overfull \hbox (16.37491pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 DE 
+ []
+
+
+Overfull \hbox (19.44434pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 I.A. 
+ []
+
+
+Overfull \hbox (16.55547pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 EN 
+ []
+
+
+Overfull \hbox (26.1804pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 JUE- 
+ []
+
+
+Overfull \hbox (24.0693pt too wide) in paragraph at lines 13--14
+ \OT1/cmr/bx/n/10 GOS 
+ []
+
+
+Overfull \hbox (42.36119pt too wide) in paragraph at lines 16--17
+ []\OT1/cmr/m/n/10 Realizado 
+ []
+
+
+Overfull \hbox (14.75005pt too wide) in paragraph at lines 16--17
+ \OT1/cmr/m/n/10 por 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no â in font cmbx10!
+
+Overfull \hbox (20.9721pt too wide) in paragraph at lines 18--19
+ []\OT1/cmr/bx/n/10 JOS 
+ []
+
+
+Overfull \hbox (47.63861pt too wide) in paragraph at lines 18--19
+ \OT1/cmr/bx/n/10 MIGUEL 
+ []
+
+
+Overfull \hbox (30.09706pt too wide) in paragraph at lines 18--19
+ \OT1/cmr/bx/n/10 HOR- 
+ []
+
+
+Overfull \hbox (23.38876pt too wide) in paragraph at lines 18--19
+ \OT1/cmr/bx/n/10 CAS 
+ []
+
+
+Overfull \hbox (41.37476pt too wide) in paragraph at lines 18--19
+ \OT1/cmr/bx/n/10 AGUIL- 
+ []
+
+
+Overfull \hbox (24.87486pt too wide) in paragraph at lines 18--19
+ \OT1/cmr/bx/n/10 ERA 
+ []
+
+
+Overfull \hbox (35.44453pt too wide) in paragraph at lines 21--22
+ []\OT1/cmr/m/n/10 Dirigido 
+ []
+
+
+Overfull \hbox (14.75005pt too wide) in paragraph at lines 21--22
+ \OT1/cmr/m/n/10 por 
+ []
+
+
+Overfull \hbox (67.26352pt too wide) in paragraph at lines 23--24
+ []\OT1/cmr/bx/n/10 LAWRENCE 
+ []
+
+
+Overfull \hbox (57.63858pt too wide) in paragraph at lines 23--24
+ \OT1/cmr/bx/n/10 MANDOW 
+ []
+
+
+Overfull \hbox (21.52766pt too wide) in paragraph at lines 23--24
+ \OT1/cmr/bx/n/10 AN- 
+ []
+
+
+Overfull \hbox (39.98589pt too wide) in paragraph at lines 23--24
+ \OT1/cmr/bx/n/10 DALUZ 
+ []
+
+
+Overfull \hbox (62.38902pt too wide) in paragraph at lines 26--27
+ []\OT1/cmr/m/n/10 Departamento 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no ì in font cmbx10!
+
+Overfull \hbox (69.94405pt too wide) in paragraph at lines 28--29
+ []\OT1/cmr/bx/n/10 LENGUAJES 
+ []
+
+
+Overfull \hbox (8.6944pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 Y 
+ []
+
+
+Overfull \hbox (33.05537pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 CIEN- 
+ []
+
+
+Overfull \hbox (27.74985pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 CIAS 
+ []
+
+
+Overfull \hbox (16.37491pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 DE 
+ []
+
+
+Overfull \hbox (15.61102pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 LA 
+ []
+
+
+Overfull \hbox (31.69427pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 COM- 
+ []
+
+
+Overfull \hbox (53.79137pt too wide) in paragraph at lines 28--29
+ \OT1/cmr/bx/n/10 PUTACIN 
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--33
+[] 
+ []
+
+Missing character: There is no √ in font cmbx10!
+Missing character: There is no Å in font cmbx10!
+
+Overfull \hbox (47.13863pt too wide) in paragraph at lines 34--35
+ \OT1/cmr/bx/n/10 MLAGA,
+ []
+
+
+Overfull \hbox (35.66652pt too wide) in paragraph at lines 34--35
+ \OT1/cmr/bx/n/10 febrero
+ []
+
+
+Overfull \hbox (22.99988pt too wide) in paragraph at lines 34--35
+ \OT1/cmr/bx/n/10 2012
+ []
+
+)
+! Emergency stop.
+<*> pagina1.tex
+               
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 10 strings out of 494045
+ 256 string characters out of 3145963
+ 50890 words of memory out of 3000000
+ 3401 multiletter control sequences out of 15000+200000
+ 3948 words of font info for 15 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 14i,1n,11p,83b,137s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

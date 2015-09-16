@@ -1,0 +1,155 @@
+\chapter{Estrategias}
+\label{cap:estrategias}
+Este capítulo define el concepto de \textit{agente inteligente} y profundiza en el estudio de los algoritmos que usan los agentes para juegos con adversario.
+Estos algoritmos representan las estrategias usadas por los agentes para realizar los movimientos válidos en los juegos y lograr sus objetivos.
+
+\bigskip
+La siguiente sección comienza definiendo el concepto de agente de forma general.
+
+\section{Agentes}
+\label{sec:agentes}
+Un \textbf{agente} o \textbf{agente inteligente} es un sistema capaz de percibir su entorno, procesar tales percepciones y actuar en su entorno de manera racional.
+
+Un agente tiene por lo tanto un \textbf{comportamiento}: se desenvuelve en un \textbf{medio}, es capaz de percibir el medio y es capaz de actuar sobre el medio; tiene un \textbf{objetivo} y tiene \textbf{conocimiento} que le permite tomar una decisión %obtener una representación del medio y realizar un proceso de búsqueda en el mismo 
+para actuar siguiendo el principio de \textbf{racionalidad}: eligiendo siempre la acción que parece acercarle más a su objetivo.
+
+\bigskip
+Antes de definir completamente nuestro agente indicando sus objetivos, conocimiento y acciones a realizar, debemos definir el medio en el que se va a desenvolver.
+\section{El medio}
+\label{sec:el_medio}
+El \textbf{medio} o \textbf{entorno} en el que se desenvuelven nuestros agentes son los juegos con adversario, un subconjunto de los problemas de decisión Markovianos.
+El entorno está definido por el espacio de estados del problema, en el caso de los juegos podemos considerar el espacio de estados como un árbol de juegos.
+
+Un \textbf{árbol de juegos} es una representación de los estados de un juego mediante un \textit{hipergrafo}.
+Un \textbf{hipergrafo} es un tipo de grafo cuyos arcos o aristas (llamadas \textbf{hiperarcos} o \textbf{hiperaristas}) pueden relacionar a cualquier cantidad de vértices, en lugar de sólo un máximo de dos.
+Se caracteriza por la distinción entre 2 tipos de arcos que se denominan arcos \textit{'Y'} y arcos \textit{'O'}.
+Los arcos \textit{'O'} se corresponden con aquellos definidos y utilizados en los grafos, mientras que un arco \textit{'Y'} puede apuntar a cualquier número de sucesores y representa un conjunto de posibilidades que se deben satisfacer simultáneamente.
+
+En un árbol de juegos los nodos son los estados del juego y las aristas son los movimientos legales.
+El nodo raíz del árbol es el estado inicial del juego mientras que las hojas del árbol son los estados finales del juego. 
+Un camino en el árbol representa una sucesión de jugadas o movimientos en el juego.
+
+El estado del juego está definido por la ``situación del tablero'' y el turno (el jugador al que le toca a jugar). 
+Las reglas del juego limitan los movimientos legales del juego.
+No todos los juegos disponen de un tablero sobre el que realizar movimientos, por ejemplo el juego de \textit{Grundy}~\citeref{grundy} o los juegos de cartas; por lo que la situación del tablero se refiere a la posición o estado de todos los elementos que intervienen en el juego (fichas, monedas, cartas, tablero, \ldots) y que permiten diferenciar un estado del juego de otro diferente.
+
+En el capítulo~\ref{cap:juegos} se definió formalmente un juego como una clase de problemas de búsqueda con un estado inicial, una función sucesor, un test terminal y una función de utilidad.
+El estado inicial y los movimientos legales para cada jugador (función sucesor) definen el árbol de juegos.
+La figura~\ref{fig:arbol_juego_3enraya} muestra parcialmente el árbol de búsqueda para el juego del \textit{3 en Raya} o \textit{Tic-Tac-Toe}.
+El nodo raíz es el estado inicial; el primer jugador coloca una \textit{X} en una posición vacía y a continuación se alternan los movimientos con el segundo jugador que coloca \textit{O}; finalmente se alcanzan los estados terminales en los cuales se puede asignar utilidades según las reglas del juego, en este caso +1 si gana el primer jugador (\textit{X}), -1 si gana el segundo jugador (\textit{O}) y 0 si hay empate.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{contenido/cap3/imagenes/game_tree.eps}
+	\caption{Árbol parcial de búsqueda para el \textit{3 en Raya}.}
+	\label{fig:arbol_juego_3enraya}
+\end{figure}
+
+Los juegos a tratar son principalmente juegos bipersonales, de suma cero (si un jugador gana, el otro pierde), de información perfecta y por turnos; tal y como se definieron en el capítulo~\ref{cap:juegos} dedicado a los juegos.
+
+\bigskip
+Una vez conocido el medio en el que se desenvuelve el agente podemos completar la definición de un agente inteligente jugador de juegos.
+
+\section{Agentes para juegos}
+\label{sec:agentes_para_juegos}
+En los juegos, el agente hará las veces de jugador.
+Por esa razón, para referirnos a él, se utilizarán indistintamente los términos agente, agente inteligente, jugador o agente jugador.
+Podemos ahora definir formalmente un agente en el contexto de los juegos.
+
+Un \textbf{agente jugador} viene definido por los siguientes elementos:
+\begin{itemize}	
+	\item \textbf{El medio} \\
+	El jugador se desenvuelve en el espacio de estados de un juego (representado mediante el árbol de juegos) donde otro jugador independiente (un adversario) mueve por turnos. 
+	\item \textbf{Objetivos} \\
+	El objetivo del agente es ganar el juego.
+	\item \textbf{Percepciones} \\
+	El agente es capaz de percibir el estado del juego antes de realizar cada movimiento.
+	\item \textbf{Acciones} \\
+	El agente es capaz de ejecutar movimientos válidos del juego.
+	Pueden existir limitaciones de tiempo para realizar el siguiente movimiento.
+	\item \textbf{Conocimiento} \\
+	El jugador necesita una representación y una \textit{estrategia} que le permitan proponer un movimiento válido conforme a las reglas del juego.
+\end{itemize}
+
+De la sofisticación de la estrategia que use, así como de las limitaciones físicas (por ejemplo, tiempo de cálculo), dependerá la capacidad del agente para alcanzar su objetivo.
+
+\section{Búsqueda de una estrategia ganadora}
+\label{sec:busqueda_de_una_estrategia_ganadora}
+Una \textbf{estrategia ganadora} es un camino (secuencia de movimientos) desde la raíz del árbol de juegos (estado inicial) hasta las hojas del árbol (estados terminales), que garantiza que el jugador gana siempre.
+En la terminología introducida en la sección~\ref{sec:el_medio}, una estrategia ganadora es una solución del árbol de juegos que se corresponde con un \textbf{hipercamino solución}, es decir, un camino de arcos e hiperarcos tal que todas sus hojas son ganadoras para un jugador.
+
+Encontrar una solución a través de una búsqueda directa desde el estado inicial hasta una posición ganadora no es factible hoy día salvo para juegos muy sencillos (como el \textit{Grundy}), ya que no es posible generar todo el árbol de búsqueda.
+Incluso para un juego simple como el \textit{3 en Raya} es complejo dibujar el árbol de juegos completo.
+La tabla~\ref{tab:complejidad_juegos} presentada en el capítulo~\ref{cap:juegos} muestra este hecho.
+% poner tabla de juegos y complejidad en relacion al factor de ramificacion.
+
+Por lo tanto no se puede conocer de antemano una estrategia ganadora para un jugador; y en la mayoría de los casos hay que conformarse con obtener una buena jugada a partir de una configuración dada.
+Esto obliga al agente a tomar algún tipo de decisión para realizar los movimientos del juego.
+
+\bigskip
+En la siguiente sección se estudiarán las diferentes estrategias y algoritmos propuestos que usarán los agentes.
+
+\section{Estrategias}
+\label{sec:estrategias}
+A continuación se estudian los algoritmos y estrategias desarrollados.
+Todas las estrategias han sido incluidas en la aplicación interactiva para poder usarlas: jugar con ellas, analizarlas y compararlas.
+Los algoritmos estudiados son versiones generales de los mismos con el objetivo de que sean sencillos de entender y resulten útiles para la docencia.
+Versiones más sofisticadas de los algoritmos propuestos pueden ser desarrolladas e incluidas en la aplicación como se explica en el apéndice~\ref{cap:desarrollo_juegos_estrategias_heuristicos}.
+
+%\bigskip
+% PONER ESTO EN LA INTRODUCCION.
+%Implementarán versiones generales de estas estrategias de forma que resulten
+%sencillas de entender de cara a la docencia. Estas van desde el caso más básico
+%como la estrategia aleatoria hasta algoritmos más complejos como una estrategia
+%con aprendizaje u otra con redes neuronales, pasando por los clásicos
+%algoritmos de evaluación minimax y poda alfa-beta, entre otros.
+%Además de las estrategias que se detallan a continuación, para cada juego
+%se implementará un jugador que pida el movimiento al usuario. De esta
+%manera un jugador humano podrá jugar contra cualquier estrategia o incluso
+%contra otro jugador humano.
+
+\subsection{Aleatoria}
+\label{ssec:aleatoria}
+La estrategia más sencilla es un jugador que realice movimientos aleatorios.
+Este jugador es totalmente independiente del juego.
+
+Un agente con una estrategia aleatoria obtiene todos los posibles estados sucesores a partir del estado actual del juego y elige uno de ellos de forma aleatoria.
+Esta forma de proceder es ineficiente para juegos con un factor de ramificación elevado;
+pero evita que el agente deba conocer cómo se generan los estados para cada juego, ya que los estados sucesores son generados por el propio estado actual del juego, tal y como se definió en~\ref{sec:juegos_problemas_busqueda_adversario}.
+Esto hace que el agente pueda jugar a cualquier tipo de juego.
+
+Una estrategia aleatoria tampoco ayuda al agente a lograr su objetivo (ganar) de una forma directa;
+pero será de gran utilidad como base para comparar el rendimiento del resto de estrategias, además de servir como estrategia oponente en los entrenamientos de los agentes que lo requieran. 
+
+\subsection{Evaluador heurístico}
+\label{ssec:evaluador_heuristico}
+Un agente evaluador heurístico es capaz de evaluar heurísticamente si una situación dada le es favorable o no.
+
+El agente emplea la siguiente estrategia de juego: \emph{dada una situación, considera todos los movimientos inmediatos, los evalúa heurísticamente y escoge el mejor.}
+
+Esta estrategia, al contrario que la estrategia aleatoria, no es totalmente independiente del juego, pues necesita de una función de evaluación heurística que depende del tipo de juego.
+
+Cualquier jugador que necesite de una función de evaluación heurística puede considerarse como una especialización de este agente.
+El capítulo~\ref{cap:heuristicos} está dedicado a los evaluadores heurísticos que pueden usar los agentes.
+
+%\bigskip
+%La siguiente sección estudia la estrategia minimax y los agentes desarrollados que emplean dicha estrategia.
+
+\input{contenido/cap3/minimax.tex}
+
+\bigskip
+Una vez vista la estrategia básica minimax y su variante negamax, dedicaremos la siguiente sección a estudiar otra mejora de minimax: la poda alfa-beta.
+
+\input{contenido/cap3/podaAlfaBeta.tex}
+
+\bigskip
+Otra mejora con respecto al algoritmo minimax original y de alfa-beta es la posibilidad de incorporar una tabla de transposición a la búsqueda.
+En la siguiente sección se estudian las tablas de transposición.
+
+\input{contenido/cap3/tablasTransposicion.tex}
+
+\bigskip
+A continuación se describen los agentes que no necesitan de un evaluador heurístico para determinar el mejor movimiento, estos son los agentes que usan el método de Monte-Carlo y Monte-Carlo Tree Search.
+Ambas estrategias son totalmente independientes del tipo de juego, ya que no necesitan de una función de evaluación heurística.
+
+\input{contenido/cap3/montecarlo.tex}
+

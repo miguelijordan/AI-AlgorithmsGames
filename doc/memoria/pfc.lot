@@ -1,0 +1,27 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Complejidad de los juegos cl\IeC {\'a}sicos de tablero.\relax }}{15}{table.caption.4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Estrategias y sus par\IeC {\'a}metros.\relax }}{50}{table.caption.31}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Conecta-4 (I)}}{63}{table.caption.39}
+\contentsline {table}{\numberline {7.2}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Conecta-4 (II)}}{63}{table.caption.41}
+\contentsline {table}{\numberline {7.3}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Go (I)}}{64}{table.caption.43}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Go (II)}}{64}{table.caption.45}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Secuencia de entrenamiento 1}}{66}{table.caption.47}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Secuencia de entrenamiento 2}}{66}{table.caption.47}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Secuencia de entrenamiento 3}}{67}{table.caption.48}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Resultados frente a una estrategia aleatoria.\relax }}{68}{table.caption.51}
+\contentsline {table}{\numberline {7.9}{\ignorespaces Estad\IeC {\'\i }sticas de las estrategias minimax y alfa-beta.\relax }}{69}{table.caption.54}
+\contentsline {table}{\numberline {7.10}{\ignorespaces Estad\IeC {\'\i }sticas de minimax y alfa-beta con l\IeC {\'\i }mite de tiempo}}{70}{table.caption.57}
+\contentsline {table}{\numberline {7.11}{\ignorespaces Comparativa de los m\IeC {\'e}todos de Monte-Carlo (I)}}{71}{table.caption.59}
+\contentsline {table}{\numberline {7.12}{\ignorespaces Comparativa de los m\IeC {\'e}todos de Monte-Carlo (II)}}{71}{table.caption.61}
+\contentsline {table}{\numberline {7.13}{\ignorespaces Comparativa de estrategias en el Go (I)}}{72}{table.caption.63}
+\contentsline {table}{\numberline {7.14}{\ignorespaces Comparativa de estrategias en el Go (II)}}{73}{table.caption.65}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

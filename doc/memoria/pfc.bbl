@@ -1,0 +1,50 @@
+\begin{thebibliography}{MM08}
+
+\bibitem[All94]{allis1994searching}
+L.V. Allis.
+\newblock \emph{Searching for solutions in games and artificial intelligence/
+  Louis Victor Allis}.
+\newblock Ponsen \& Looijen, 1994.
+
+\bibitem[HD09]{hearn2009games}
+R.A. Hearn y E.D. Demaine.
+\newblock \emph{Games, puzzles, and computation}.
+\newblock Ak Peters Series. A K Peters, Ltd., 2009.
+
+\bibitem[Las60]{lasker1960go}
+E.~Lasker.
+\newblock \emph{Go and go-moku: the oriental board games}.
+\newblock Dover Publications, 1960.
+
+\bibitem[MM08]{PalmaMarin}
+José T.~Palma Méndez y Roque~Marín Morales.
+\newblock \emph{{I}nteligencia {A}rtificial: {T}écnicas, métodos y
+  aplicaciones}.
+\newblock McGraw-Hill, 2008.
+
+\bibitem[Nil01]{Nilsson}
+Nils~J. Nilsson.
+\newblock \emph{{I}nteligencia {A}rtificial. {U}na {N}ueva {S}íntesis}.
+\newblock McGraw-Hill, 2001.
+
+\bibitem[Pap94]{papadimitriou1994computational}
+C.H. Papadimitriou.
+\newblock \emph{Computational complexity}.
+\newblock Addison-Wesley, 1994.
+
+\bibitem[Pre95]{pressman1995ingenieria}
+R.S. Pressman.
+\newblock \emph{Ingeniería del software: un enfoque práctico}.
+\newblock McGraw-Hill, 1995.
+
+\bibitem[RN04]{RussellNorvig}
+Stuart Russell y Peter Norvig.
+\newblock \emph{{I}nteligencia {A}rtificial: {U}n {E}nfoque {M}oderno}.
+\newblock Pearson Educación, 2 edici\'on, 2004.
+
+\bibitem[SM04]{stelting2004patrones}
+S.~Stelting y O.~Maassen.
+\newblock \emph{Patrones de dise{\~n}o aplicados a {J}ava}.
+\newblock PEARSON ; PRENTICE HALL, 2004.
+
+\end{thebibliography}

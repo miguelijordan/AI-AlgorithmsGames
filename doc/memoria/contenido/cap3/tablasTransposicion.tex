@@ -1,0 +1,49 @@
+\subsection{Tablas de transposición}
+\label{ssec:tablas_transposicion}
+Esta sección desarrolla los conceptos de \textit{transposición} y \textit{tabla de transposición} para las búsquedas en árboles de juegos.
+Se presentan también los agentes que emplean esta técnica.
+
+\bigskip
+Una \textbf{transposición} es una permutación diferente de una secuencia de movimientos que termina en la misma posición.
+En el árbol de juegos se trata de un estado que puede ser alcanzado por más de un camino distinto.
+
+Los estados repetidos en el árbol de búsqueda pueden causar un aumento exponencial del coste de la búsqueda.
+Es por ello que merece la pena almacenar la evaluación de ese estado en una tabla la primera vez que se encuentre, de modo que no tenga que volver a calcularse la próxima vez que se visite.
+A esta tabla se le conoce como tabla de transposición.
+
+Una \textbf{tabla de transposición} o \textbf{tabla de transposiciones} es una base de datos donde se almacenan los resultados de búsquedas previamente realizadas.
+Normalmente se implementa mediante una tabla \textit{hash} de gran capacidad y se almacenan los estados previamente evaluados, hasta qué nivel se les realizó la búsqueda y qué acción se determinó para estos; aunque pueden almacenar más información si es necesario.
+
+Se trata de una forma de reducir el espacio de búsqueda.
+Cuando aparece una transposición, se busca en la tabla qué se determinó la última vez; evitando repetir de nuevo toda la búsqueda y pudiendo invertir ese ahorro de tiempo en aumentar la profundidad de búsqueda.
+
+La utilización de una tabla de transposición puede tener un efecto espectacular en situaciones donde hay muchas posibles transposiciones como en la etapa final de los juegos (por ejemplo en el Ajedrez).
+Por otra parte, el único problema de las tablas de transposiciones es su consumo en memoria.
+Para que sean realmente útiles deben contener muchas posiciones y si se evalúan un millón de nodos por segundo no es práctico almacenar todos ellos en la tabla de transposición.
+
+\bigskip
+Los agentes que emplean las tablas de transposición son los mismos que se han presentado anteriormente para minimax y alfa-beta pero incorporando esta nueva característica, lo que da lugar a cuatro nuevos agentes que se presentan brevemente en los siguientes apartados.
+
+\subsubsection{Minimax con profundidad máxima de búsqueda y tabla de transposición}
+\label{sssec:minimax_profmax_tablatransposicion}
+Se trata de un agente que realiza una búsqueda en el árbol de juegos mediante el algoritmo minimax, dispone de un límite en la profundidad máxima de búsqueda a partir del estado actual y cuenta con una tabla de transposición para almacenar los estados evaluados y usar la información guardada en caso de encontrar una transposición.
+
+Para más información sobre este agente se puede consultar el agente minimax con profundidad máxima de búsqueda en la sección~\ref{sssec:profundidad_maxima_busqueda}.
+
+\subsubsection{Minimax con límite de tiempo y tabla de transposición}
+\label{sssec:minimax_limiteTiempo_tablatransposicion}
+Este agente realiza una búsqueda en el árbol de juegos empleando el algoritmo minimax, dispone de un límite de tiempo para devolver el mejor movimiento y cuenta con una tabla de transposición.
+
+La sección~\ref{sssec:limite_tiempo} contiene información sobre el agente minimax con límite de tiempo.
+
+\subsubsection{Alfa-beta con profundidad máxima de búsqueda y tabla de transposición}
+\label{sssec:alfabeta_profmax_tablatransposicion}
+Este agente emplea el algoritmo minimax con poda alfa-beta incluida para realizar la búsqueda en el árbol de juegos; tiene una profundidad máxima de búsqueda y se ayuda de una tabla de transposición para evitar evaluar los estados repetidos.
+
+En la sección~\ref{sssec:profundidad_maxima_busqueda_alfabeta} se detalla el agente alfa-beta con profundidad máxima de búsqueda, que cuenta con las mismas características que este, salvo obviamente, la tabla de transposición.
+
+\subsubsection{Alfa-Beta con límite de tiempo y tabla de transposición}
+\label{sssec:alfabeta_limiteTiempo_tablatransposicion}
+El último agente también usa el algoritmo minimax con poda alfa-beta; tiene un límite de tiempo para realizar la búsqueda en el árbol y también cuenta con una tabla de transposición.
+
+El agente alfa-beta con límite de tiempo puede consultarse en la sección~\ref{sssec:limite_tiempo_alfabeta}.

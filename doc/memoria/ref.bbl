@@ -1,0 +1,82 @@
+\begin{thebibliography}{CBSS08}
+
+\bibitem[CBSS08]{MCTS}
+Guillaume Chaslot, Sander Bakkes, Istvan Szita, y Pieter Spronck.
+\newblock \emph{{M}onte-{C}arlo {T}ree {S}earch: {A} {N}ew {F}ramework for
+  {G}ame {AI}}.
+\newblock En \emph{AIIDE}. 2008.
+
+\bibitem[ENC08]{encog}
+\emph{{E}ncog {M}achine {L}earning {F}ramework}.
+\newblock https://github.com/encog, http://code.google.com/p/encog-java/, 2008.
+
+\bibitem[Epp]{complejidadJuegos}
+David Eppstein.
+\newblock \emph{{C}omputational complexity of games and puzzles}.
+\newblock School of Information \& Computer Science, UC Irvine.
+
+\bibitem[EUG57]{EuropeanGoFederation}
+\emph{{E}uropean {G}o {F}ederation}.
+\newblock http://www.eurogofed.org/, 1957.
+
+\bibitem[Fis96]{george1996monte}
+George~S. Fishman.
+\newblock \emph{Monte Carlo: concepts, algorithms, and applications}.
+\newblock Springer series in operations research. Springer-Verlag, 1996.
+
+\bibitem[Gla04]{glasserman2004monte}
+P.~Glasserman.
+\newblock \emph{Monte Carlo methods in financial engineering}.
+\newblock Applications of mathematics. Springer, 2004.
+
+\bibitem[GS11]{MCTS2}
+Sylvain Gelly y David Silver.
+\newblock \emph{{M}onte-{C}arlo tree search and rapid action value estimation
+  in computer {G}o}.
+\newblock \emph{Artif. Intell.}, 175:1856--1875, July 2011.
+
+\bibitem[HA10]{IAICJMHA}
+José~Miguel Horcas~Aguilera.
+\newblock \emph{{A}puntes de {I}nteligencia {A}rtificial e {I}ngeniería del
+  {C}onocimiento, {D}pto. {L}enguajes y {C}iencias de la {C}omputación ({U}.
+  de {M}álaga)}, 2010.
+\newblock Capítulos 11, P11, 12, 13 y K.
+
+\bibitem[IGo82]{InternationalGoFederation}
+\emph{{I}nternational {G}o {F}ederation}.
+\newblock https://intergofed.org/index.php, March 1982.
+
+\bibitem[JAV]{java}
+\emph{{J}ava para desarrolladores.}
+\newblock http://www.oracle.com/technetwork/java/index.html.
+
+\bibitem[MA08]{IAICLMA}
+Lawrence Mandow~Andaluz.
+\newblock \emph{{A}puntes de {I}nteligencia {A}rtificial e {I}ngeniería del
+  {C}onocimiento, {D}pto. {L}enguajes y {C}iencias de la {C}omputación ({U}.
+  de {M}álaga)}, 2008.
+\newblock Capítulos 8, 11, 12 y 13.
+
+\bibitem[Riv92]{rfc1321}
+Ronald~L. Rivest.
+\newblock \emph{The md5 message-digest algorithm}.
+\newblock Internet RFC 1321, April 1992.
+
+\bibitem[SlB10]{GPUMonteCarlo}
+J.~Sánchez, H.~Álvarez, y D.~Borro.
+\newblock \emph{Gpu optimizer: A 3d reconstruction on the gpu using monte carlo
+  simulations}.
+\newblock En \emph{International Conference on Computer Vision Theory and
+  Applications (VISAPP'2010)}, p\'aginas 443--446. Angers, France, 2010.
+
+\bibitem[TT96]{reglasLogicas}
+John Tromp y Bill Taylor.
+\newblock \emph{{T}romp-{T}aylor rules of go}.
+\newblock http://homepages.cwi.nl/~tromp/go.html, September 1996.
+
+\bibitem[Wei]{grundy}
+Eric~W. Weisstein.
+\newblock \emph{{G}rundy's {G}ame}.
+\newblock MathWorld--A Wolfram Web Resource.
+
+\end{thebibliography}

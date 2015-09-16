@@ -1,0 +1,55 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Situaci\IeC {\'o}n de suicidio en el Go}}{17}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Situaci\IeC {\'o}n de captura en el Go}}{17}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Situaci\IeC {\'o}n de \textit {Ko} en el Go}}{17}{figure.caption.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \IeC {\'A}rbol parcial de b\IeC {\'u}squeda para el \textit {3 en Raya}.\relax }}{21}{figure.caption.9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Minimax aplicado a un \IeC {\'a}rbol de juegos.\relax }}{24}{figure.caption.10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Poda alfa-beta aplicada a un \IeC {\'a}rbol de juegos.\relax }}{28}{figure.caption.14}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Fases del algoritmo Monte-Carlo Tree Search.}}{32}{figure.caption.23}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Cinco simulaciones de Monte-Carlo Tree Search.}}{36}{figure.caption.24}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Posibilidades en el Conecta-3 (I)}}{44}{figure.caption.28}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Posibilidades en el Conecta-3 (II)}}{44}{figure.caption.29}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Matriz de posibilidades.\relax }}{44}{figure.caption.30}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama de los principales casos de uso de la aplicaci\IeC {\'o}n.\relax }}{51}{figure.caption.32}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagrama de casos de uso para los juegos.\relax }}{52}{figure.caption.33}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de casos de uso para las estrategias.\relax }}{53}{figure.caption.34}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama de clases de los juegos.\relax }}{55}{figure.caption.35}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de clases de las estrategias.\relax }}{57}{figure.caption.36}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Diagrama de clases de los heur\IeC {\'\i }sticos.\relax }}{59}{figure.caption.37}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Diagrama de clases de las extensiones de la interfaz gr\IeC {\'a}fica.\relax }}{61}{figure.caption.38}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Conecta-4 (I)}}{63}{figure.caption.40}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Conecta-4 (II)}}{63}{figure.caption.42}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Go (I)}}{64}{figure.caption.44}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Comparativa de los evaluadores heur\IeC {\'\i }sticos del Go (II)}}{65}{figure.caption.46}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Secuencia de entrenamiento 1}}{66}{figure.caption.49}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Secuencia de entrenamiento 2}}{66}{figure.caption.49}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Secuencia de entrenamiento 3}}{67}{figure.caption.50}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Resultados de los entrenamientos.\relax }}{68}{figure.caption.52}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Estado inicial del Conecta-4.\relax }}{68}{figure.caption.53}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Mejor movimiento de minimax y alfa-beta en el Conecta-4 (I)}}{69}{figure.caption.55}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Estado inicializado del Conecta-4.\relax }}{69}{figure.caption.56}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces Mejor movimiento de minimax y alfa-beta en el Conecta-4 (II)}}{70}{figure.caption.58}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Comparativa de los m\IeC {\'e}todos de Monte-Carlo (I)}}{71}{figure.caption.60}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces Comparativa de los m\IeC {\'e}todos de Monte-Carlo (I)}}{72}{figure.caption.62}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Comparativa de estrategias en el Go (I)}}{73}{figure.caption.64}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Comparativa de estrategias en el Go (II)}}{73}{figure.caption.66}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Pantalla principal de la aplicaci\IeC {\'o}n.\relax }}{79}{figure.caption.68}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Pantalla de selecci\IeC {\'o}n y configuraci\IeC {\'o}n de la estrategia.\relax }}{80}{figure.caption.69}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Pantalla de configuraci\IeC {\'o}n y entrenamiento de un evaluador heur\IeC {\'\i }stico.\relax }}{80}{figure.caption.70}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Pantalla de juego.\relax }}{82}{figure.caption.73}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Pantalla de simulaci\IeC {\'o}n.\relax }}{82}{figure.caption.75}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Pantalla de an\IeC {\'a}lisis de estados.\relax }}{83}{figure.caption.77}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Pantallas de resultados y estad\IeC {\'\i }sticas.\relax }}{84}{figure.caption.78}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{84}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{84}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{84}{subfigure.7.3}
+\addvspace {10\p@ }

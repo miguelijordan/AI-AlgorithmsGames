@@ -1,0 +1,58 @@
+\documentclass[12pt, a4paper]{article}
+
+
+\usepackage[margin=2.5cm, nohead]{geometry}
+% Codificaci�n
+\usepackage[utf8x]{inputenc}			% Permite el uso de caracteres acentuados.
+\usepackage[T1]{fontenc}				% Letras acentuadas reales y no imitadas.
+\usepackage{textcomp}					% Incluye mayor n�mero de letras con diacr�ticos.
+
+% Idiomas
+\usepackage[english, spanish]{babel} 	% Para generar documentos en idiomas distintos al ingl�s.
+%\usepackage{eurosym}					% S�mbolo del euro (�).
+
+% Espaciado
+\usepackage[onehalfspacing]{setspace}	% Controla el espaciado entre l�neas.
+										% \singlespacing, \onehalfspacing,
+% Informaci�n
+\title{ENTORNO INTERACTIVO PARA EL ESTUDIO DE ESTRATEGIAS DE I.A.
+EN JUEGOS\\Resumen}
+\author{José Miguel Horcas Aguilera}
+\date{\today}
+
+												
+\begin{document}
+
+	\maketitle
+
+El objetivo del proyecto es el desarrollo de un entorno interactivo
+para el estudio de algoritmos y estrategias de Inteligencia Artificial en
+juegos.
+
+Se ha desarrollado un módulo de razonamiento para los juegos, estrategias y
+heurísticos.
+Los juegos se representan como problemas de búsquedas entre adversarios y los
+jugadores como agentes inteligentes que se desenvuelven en el espacio de estados
+de los juegos.
+El objetivo del agente es encontrar una estrategia ganadora.
+
+Los juegos considerados son bipersonales, por turnos, de información perfecta,
+de suma cero y deterministas; de los que se han elegido dos: el Conecta-4 y
+el Go.
+Se han estudiado y desarrollado los algoritmos clásicos de juegos:
+minimax, alfa-beta y las tablas de transposición; además de métodos más
+recientes como Monte-Carlo Tree Search.
+Las estrategias contienen modificaciones prácticas como límites de tiempo para
+decidir el mejor movimiento a realizar.
+También se han incluido los heurísticos necesarios para evaluar los diferentes
+estados de los juegos; entre ellos se encuentran un evaluador con tablas de
+valor y un evaluador con red neuronal que precisan de un aprendizaje previo.
+
+La aplicación permite al usuario jugar contra diferentes estrategias o contra
+otro jugador humano, ver el desarrollo de una partida entre dos agentes
+inteligentes, simular un número de partidas y analizar un estado concreto de un
+juego.
+En todos los casos, la aplicación proporciona estadísticas para analizar
+y comparar el rendimiento y la eficacia de las estrategias.
+
+\end{document}

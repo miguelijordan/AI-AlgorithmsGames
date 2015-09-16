@@ -1,0 +1,94 @@
+\chapter{Introducción}
+\label{cap:introduccion}
+Este capítulo describe la motivación del proyecto, así como los objetivos del mismo y la aportación realizada.
+Se incluye también la estructura de este documento con una breve descripción de los contenidos de cada capítulo.
+
+\section{Motivación}
+\label{sec:motivacion}
+Los juegos son un tema atractivo a estudiar para los investigadores de Inteligencia Artificial (IA).
+La naturaleza abstracta de los juegos, la facilidad de representar el estado de los mismos y la definición precisa de sus reglas hace que hayan tenido mucho interés en la comunidad de IA.
+
+Los juegos se pueden representar como problemas de búsqueda con adversarios y son interesantes porque son demasiado difíciles para resolverlos de forma exacta.
+Normalmente no es factible calcular una solución óptima y requieren la capacidad de tomar alguna decisión. %\cite{RN03, N01}.
+
+Los algoritmos y métodos usados en el ámbito de los juegos pueden extenderse a otras áreas de la Inteligencia Artificial o de la Investigación Operativa para problemas de búsquedas o toma de decisiones.
+
+\section{Estado del arte}
+\label{sec:estado_arte}
+Originalmente, los juegos que se han estudiado en IA han sido los clásicos juegos de tablero (\textit{classic board-games}), como el Ajedrez, las Damas, el Othello o el Go.
+Juegos de dos jugadores, deterministas y de información perfecta.
+Las estrategias han estado siempre muy ligadas a estas características.
+
+Recientemente, la aparición de nuevas clases de juegos (los llamados \textit{modern board-games} o \textit{Eurogames}, como los ``Colonos de Catán'' o el ``Carcassonne'') ha despertado el interés de los investigadores de IA debido a las características de los mismos.
+Por un lado, en estos juegos las reglas son precisas y se juega por turnos al igual que los juegos clásicos.
+Por otro lado, pueden incorporar aleatoriedad, ocultación de la información, múltiples jugadores y otras características como por ejemplo que el propio tablero se va construyendo mientras se desarrolla la partida o puede variar de una a otra; lo que hace imposible usar libros de aperturas o bases de datos de finales.
+Estos juegos suponen un enlace directo entre los juegos clásicos y los actuales videojuegos.
+Los algoritmos clásicos deben modificarse para tener en cuenta estas características.
+
+También han surgido nuevas técnicas, como las estrategias basadas en el método de las simulaciones de Monte-Carlo, que han mejorado los programas de juego, como es el caso del Go donde los programas de ordenador han conseguido llegar al nivel de los humanos en los últimos años.
+Por ejemplo, en~\citeref{MCTS} se aplica el método de Monte-Carlo Tree Search a los clásicos juegos de tablero, a los juegos modernos de tablero y a los videojuegos.
+
+Este proyecto no parte de cero, pues la idea de una aplicación interactiva para estrategias y juegos surge a partir de unos trabajos realizados sobre los contenidos de la asignatura ``Inteligencia Artificial e Ingeniería del Conocimiento'' de la ETSII de la Universidad de Málaga.\footnote{Trabajos realizados por el propio autor del proyecto durante la beca de Prácticas de Gestión para la convergencia de las enseñanzas con el Espacio Europeo de Educación Superior (EEES) durante el periodo comprendido entre los meses de febrero y diciembre del año 2010.} 
+En ellos \citeref{IAICJMHA} se adaptan al lenguaje de programación Java los algoritmos clásicos de juegos desarrollados originalmente en lenguaje Lisp \citeref{IAICLMA} junto con su correspondiente documentación en forma de apuntes académicos.
+Aprovecho para dar las gracias al centro ETSII y a la Universidad de Málaga por la beca, así como a los profesores implicados: Lawrence Mandow (profesor asignado durante las prácticas) y Eva Millán (Subdirectora de Innovación Educativa y coordinadora de los alumnos de prácticas).
+ 
+\section{Objetivos}
+El objetivo del proyecto es desarrollar un entorno interactivo que permita jugar y comparar el rendimiento de estrategias de IA en juegos.
+
+Los juegos a considerar son una clase especializada: juegos de suma cero, de dos jugadores, por turnos, deterministas y de información perfecta.
+El proyecto incluye el desarrollo de dos de estos juegos:
+\begin{itemize}
+	\item El juego del Conecta-4.
+	\item El juego del Go.
+\end{itemize}
+La elección de estos juegos se deben a que el Conecta-4 es relativamente sencillo, pues su espacio de estados es pequeño en comparación con otros juegos como el Ajedrez ($10^{21}$ nodos aproximadamente en el árbol de juegos completo del Conecta-4 frente a $10^{123}$ nodos en el árbol de juegos del Ajedrez).
+En cambio, el juego del Go supone todo un desafío: el tamaño de su árbol de búsqueda completo es de $10^{360}$ nodos para un tablero de dimensiones 19$\times$19; aunque en el proyecto se considerará una versión reducida del tablero (9$\times$9), lo que simplifica el espacio de estados en torno a los $10^{80}$ nodos.
+
+El proyecto se centra en el estudio y desarrollo de las estrategias clásicas como minimax, alfa-beta o las tablas de transposición; y de métodos más recientes como Monte-Carlo Tree Search.
+Las estrategias desarrolladas son las siguientes:
+\begin{itemize}
+	\item Un jugador humano para cada juego.
+	\item Un jugador aletorio.
+	\item Un jugador evaluador heurístico.
+	\item La estrategia minimax.
+	\item La poda alfa-beta.
+	\item Las tablas de transposiciones.
+	\item El método de Monte-Carlo.
+	\item El método de Monte-Carlo Tree Search.
+\end{itemize}
+Algunas de estas estrategias incluyen varias versiones con modificaciones, como por ejemplo un límite en el tiempo disponible para decidir el mejor movimiento.
+
+También se incluyen los heurísticos necesarios para las estrategias que lo requieran y que permiten evaluar las posiciones de los juegos.
+Entre ellos se encuentran un evaluador con tablas de valor y un evaluador con red neuronal que precisan de un entrenamiento previo y por tanto de un módulo de aprendizaje propio.
+Los demás heurísticos desarrollados son específicos para cada juego pues requieren de información del dominio.
+
+\section{Aportaciones}
+\label{sec:aportaciones}
+El entorno interactivo permite al usuario jugar contra las estrategias desarrolladas o contra otro jugador humano; ver el desarrollo de una partida entre dos estrategias controladas por el ordenador; simular un número de partidas obteniendo estadísticas de los resultados; y analizar detenidamente un único movimiento en un determinado estado de un juego.
+En definitiva, la aplicación supone una forma más fácil y amena de estudiar, analizar y comparar las estrategias y los propios juegos.
+
+El proyecto proporciona además un marco de trabajo para el dominio de los juegos en IA, permitiendo incorporar otros juegos, estrategias y heurísticos de forma sencilla.
+Esto hace que el proyecto sea útil tanto para la docencia como para la investigación en el campo de los problemas de búsqueda en juegos.
+
+\section{Estructura de los contenidos}
+\label{sec:estructura_contenidos}
+A continuación se describe brevemente el contenido de cada uno de los capítulos de este documento:
+\begin{description}
+	\item[Capítulo 1: Introducción.] Se presenta la motivación del proyecto y los objetivos del mismo, así como las aportaciones realizadas; y se realiza un breve repaso a la actualidad en el ámbito de los juegos en IA.
+	\item[Capítulo 2: Juegos.] Se describen las características de los juegos en IA y se representan como problemas de búsqueda con adversarios. Se detallan los dos juegos considerados: el juego del Conecta-4 y el juego del Go.
+	\item[Capítulo 3: Estrategias.] Define el concepto de agente inteligente y estudia en detalle cada uno de los algoritmos y estrategias que han sido desarrollados. Para cada uno de estos algoritmos se definen los agentes jugadores que los utilizan.
+	\item[Capítulo 4: Heurísticos.] Presenta los conceptos de heurístico y evaluador heurístico, definiendo la función de evaluación que necesitan algunas de las estrategias del Capítulo~\ref{cap:estrategias}. Se estudia el aprendizaje con refuerzo para entrenar los evaluadores con tabla de valor y red neuronal y se proponen varios heurísticos para cada uno de los juegos.
+	\item[Capítulo 5: Especificación.] Este capítulo detalla los requisitos del proyecto y describe los casos de uso de la aplicación interactiva.
+	\item[Capítulo 6: Arquitectura de la aplicación.] Se muestra la arquitectura de la aplicación de forma global, presentando los diagramas de clases más importantes que permiten construir los módulos de razonamiento de los jugadores y el espacio de estados de los juegos. 
+	\item[Capítulo 7: Experimentación.] Se muestran los resultados obtenidos en las pruebas realizadas para las diferentes estrategias y juegos: simulaciones de partidas, entrenamientos de jugadores y análisis de posiciones concretas de los juegos.
+	\item[Capítulo 8: Conclusiones y trabajo futuro.] Presenta las conclusiones obtenidas tras el desarrollo del proyecto y describe el trabajo futuro propuesto sobre el proyecto: posibles extensiones y mejoras; además de la aplicación de los contenidos a otros campos de la IA.
+	\item[Apéndice A: Manual de usuario.] El contenido de este apéndice es el manual de usuario de la aplicación interactiva; explica su instalación y su manejo básico.	
+	\item[Apéndice B: Desarrollo de nuevos juegos, estrategias y heurísticos.] En este apéndice se explica como desarrollar nuevos juegos, estrategias y heurísticos, de forma que puedan usarse junto con los desarrollados. También se explica la forma de integrar estos elementos en la aplicación interactiva.
+\end{description}
+%% Esto para la introducción del primer capitulo
+%%Un agente inteligente viene definido por los siguientes elementos: unos
+%%objetivos (en el caso de los juegos el objetivo es ganar), un medio en el que
+%%se desenvuelve (por ejemplo el tablero de juego), la percepción que el agente
+%%tiene del medio, las acciones a realizar (movimiento válidos del juego) y el
+%%conocimiento que viene determinado por la estrategia usada por el agente
+%%para proponer un movimiento válido.

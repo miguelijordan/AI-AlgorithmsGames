@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.12pt}
+\select@language {spanish}
+\beamer@sectionintoc {2}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {3}{Juegos}{5}{0}{2}
+\beamer@sectionintoc {4}{Estrategias y heur\IeC {\'\i }sticos}{10}{0}{3}
+\beamer@sectionintoc {5}{La aplicaci\IeC {\'o}n}{22}{0}{4}
+\beamer@sectionintoc {6}{Conclusiones}{23}{0}{5}
